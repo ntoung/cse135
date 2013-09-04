@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Author Solely by Michael Yao -->
+    <!-- setup style and charset -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CSE135</title>
+    <!-- end of style and charset -->
+    
+    <!-- About this page -->
+    <meta name="description" content="Front Page">
+    <meta name="author" content="Michael Yao">
+    <!-- end of About this page -->
+
+    <!-- enable responsive features -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- end of responsive featuers -->
+
+    <!-- load style sheet -->
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/frontPage.css" rel="stylesheet">
+    <!-- load js at the end to increase speed -->
+    <script src="scripts/layout.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- end of loading js -->
+
+    <!-- customized script -->
+    <script>
+    window.onload = function()
+    {
+        /* corner case, jQuery failed */
+        if(!window.jQuery)
+        {
+            alert('jQuery not loaded');
+        }
+        else
+        {
+            /* call carousel js */
+            $(document).ready(function(){
+                $('.dropdown-toggle').dropdown();
+                $('#myCarousel').carousel();
+            });
+        }
+    }
+    </script>
+    <!-- end of customized script -->
+    <link rel="icon" 
+     type="image/png" 
+     href="images/favicon.png">
+	 
+	<style>
+	 .center1{
+	margin:auto;
+	width:15%;
+	}</style>
+</head>
+<body  onload= "switchpanel()" >
+    <!-- Video background -->
+    <video class="video_background" preload="auto" autoplay loop="loop" muted> 
+    <source src="videos/background.mp4" type="video/mp4">Video not supported </video>
+    <!-- end of video background -->
+
+    <!-- navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <div class="container">
+ 
+              <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </a>
+         
+              <!-- Title  -->
+              <a class="brand" href="index.html">CSE135</a>
+              <ul class="nav">
+
+                <!-- links other than title -->
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="phpPage/serverInfo.php">Server Info in PHP</a></li>
+				<li><a href="quizmaker.html">Quiz Maker</a></li>
+                <li><a href="template.html">
+<?php
+session_start();
+  require '../connect.php'; 
+
+  $query      = $_SESSION['account_data'];
+  $result = mysql_query($query);
+  $row = mysql_fetch_array($result,MYSQL_NUM);
+  $type     = $_SESSION['account_type'];
+  if( strcmp($type, 'slogin') == 0 )
+	$type = 'student';
+  else if( strcmp($type, 'plogin') == 0 )
+	$type = 'professor';
+  else if( strcmp($type, 'tlogin') == 0 )
+	$type = 'TA';
+print "Account: $row[1]"; 
+?>
+
+	      </a></li>
+                <li><a href="editInfo.html">EditInfo</a></li>
+                <li><a href="#">TakeQuiz</a></li>
+		<li><a href="pcode/logout.php">Logout</a></li>
+				
+				
+              </ul>
+
+
+              <!-- search engine -->
+              <div class="nav-collapse collapse pull-right">
+                  <form class="navbar-search pull-left">
+                    <input type="text" class="search-query" placeholder="Search">
+                  </form>
+              </div>
+              <!-- end of search engine -->
+
+ 
+            </div>
+        </div>
+    </div>
+    <!-- end of navbar -->
+	   
+
+			 
+ <div id="spanel">
+          
+          <div class="modal-body" style="max-height: 900px">
+            <div class="well">
+              <ul class="nav nav-tabs">
+			  
+			   <strong>Hello, <?php print "$row[4] $row[5]";?> <br>
+						You are logged in as a : <?php echo $type;?>.
+						</strong><br><br>
+			  
+                <li class="active"><a href="#s_viewtest" data-toggle="tab">View tests</a></li>
+				<li><a href="#s_seegrade" data-toggle="tab">See Graded Tests</a></li>
+				<li><a href="#s_seeprof" data-toggle="tab">List Your professors</a></li>
+                <li><a href="#s_addprof" data-toggle="tab">Add a Professors</a></li>
+				
+              </ul>
+              <div id="myTabContent" class="tab-content">
+
+                <!-- login setup -->
+                <div class="tab-pane active in" id="s_viewtest">
+				in progress, add code here
+                </div>
+             			 
+			   <div class="tab-pane fade" id="s_seegrade">
+			   in progress,add code here
+			   </div>
+			   
+			   <div class="tab-pane fade" id="s_seeprof">
+			   in progress, add code here
+			   </div>
+			   
+                <div class="tab-pane fade" id="s_addprof">
+                  <form id="createtype" action='registeration.php' method="POST">
+                    <label>Please enter professor's Username</label>
+                    <input type="text" value="" class="input-xlarge" name="pemail"/>
+             
+                    <div>
+                     <button class="btn btn-primary">Create Account</button>
+                    </div>
+                  </form>
+
+                            
+                </div>
+                <!-- create account setup -->
+              </div>
+            </div>
+          </div>
+    
+    </div>
+
+	<div id="ppanel">
+          
+          <div class="modal-body" style="max-height: 900px">
+            <div class="well">
+              <ul class="nav nav-tabs">
+			  
+			   <strong>Hello, <?php echo "$row[4] $row[5]";?> <br>
+						You are logged in as a : <?php echo $type;?>.
+						</strong><br><br>
+			  
+                <li class="active"><a href="#p_editquiz" data-toggle="tab">Manage Quizzes</a></li>
+				<li><a href="#p_gradequiz" data-toggle="tab"> 	Grade Quizzes</a></li>
+				<li><a href="#p_seegrade" data-toggle="tab">View Graded Quizzes</a></li>
+				<li><a href="#p_listtas" data-toggle="tab"></a>View TAs / Students</li>
+                <li><a href="#p_addta" data-toggle="tab">Add a TA</a></li>
+
+              </ul>
+              <div id="myTabContent" class="tab-content">
+
+                <!-- login setup -->
+				
+                <div class="tab-pane active in" id="p_gradequiz">
+				work in progress
+                </div>
+				
+                <div class="tab-pane active in" id="p_seegrade">
+				work in progress
+                </div>
+				
+				<div class="tab-pane active in" id="p_listtas">
+				work in progress
+                </div>
+                <div class="tab-pane active in" id="p_addta">
+				
+				  <form id="createtype" action='' method="POST">
+                    <label>Please enter TA's Username</label>
+                    <input type="text" value="" class="input-xlarge" name="tauser"/>
+
+                      <button class="btn btn-primary">Create Account</button>
+                    </div>
+                </div>
+				
+				
+                <!-- end of login setup -->
+
+                <!-- create account setup -->
+              
+                
+                  </form>
+
+                            
+                </div>
+                <!-- create account setup -->
+              </div>
+            </div>
+          </div>
+    
+    </div>
+	
+	<div id="tpanel">
+          
+          <div class="modal-body" style="max-height: 900px">
+            <div class="well">
+              <ul class="nav nav-tabs">
+			  
+			   <strong>Hello, <?php echo "$row[4] $row[5]";?> <br>
+						You are logged in as a : <?php echo $type;?>.
+						</strong><br><br>
+			  
+                <li class="active"><a href="#wip" data-toggle="tab">Grade Quizzes</a></li>
+				<li><a href="#" data-toggle="tab">View Graded Quizzes</a></li>
+				<li><a href="#" data-toggle="tab">List Your Professors</a></li>
+				</ul>
+              <div id="myTabContent" class="tab-content">
+
+                <!-- login setup -->
+                <div class="tab-pane active in" id="login">
+                
+
+                <!-- create account setup -->
+                <div class="tab-pane fade" id="wip">
+               wip
+
+                            
+                </div>
+                <!-- create account setup -->
+              </div>
+            </div>
+          </div>
+    
+    </div>
+	
+	<script>
+	
+	/* i know this is stupid and should really be on 3 seperate pages*/
+	function switchpanel(){
+
+	document.getElementById('spanel').style.display="none";
+	document.getElementById('ppanel').style.display="none";
+	document.getElementById('tpanel').style.display="none";
+
+	var ptype = "<?php echo $type;?>";
+
+  if (ptype == "student") {
+		document.getElementById('spanel').style.display="block";
+  }
+  if (ptype == "professor" ) {
+		document.getElementById('ppanel').style.display="block";
+
+  }
+  if (ptype == "TA" ) {
+		document.getElementById('tpanel').style.display="block";
+  }
+}
+
+	</script>
+	
+</body>
+</html>

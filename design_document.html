@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Header
+================================================== -->
+<head>
+<meta charset="utf-8">
+    <link rel="icon" 
+     type="image/png" 
+     href="images/favicon.png">
+<title>Design Document</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Le styles -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="./assets/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="./assets/css/docs.css" rel="stylesheet">
+<link href="./assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- Le fav and touch icons -->
+<link rel="shortcut icon" href="assets/ico/favicon.ico">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+<!-- Local Styles -->
+<style type="text/css">
+.bs-docs-sidenav > li {
+	background-color: #3cd7e7;
+}
+.bs-docs-sidenav > li > a {
+	color: #ffffff;
+}
+.bs-docs-sidenav > li:first-child {
+	background-color: #3cd7e7;
+}
+.bs-docs-sidenav > li:hover {
+	background-color: #f5f5f5;
+	color: #ffffff;
+}
+.bs-docs-sidenav > li > a:hover {
+	color: #000000;
+}
+</style>
+</head>
+
+<!-- Body
+================================================== -->
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+<!-- Navbar
+================================================== -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="brand" href="index.html">Group 7</a>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class=""> <a href="index.html">Home</a> </li>
+          <li class=""> <a href="quizmaker.html">Quiz Maker</a> </li>
+          <li class="active"> <a href="design_document.html">Design Document</a> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <div class="container">
+      <h1>Design Document</h1>
+      <p class="lead"> Project Overview </p>
+    </div>
+  </div>
+</header>
+
+<!-- Sidebar and Content
+================================================== -->
+<div class="container">
+  <div class="row"> 
+    <!-- Sidebar
+    ================================================== -->
+    <div class="span3 bs-docs-sidebar">
+      <ul class="nav nav-list bs-docs-sidenav affix-top">
+        <li class=""><a href="#purpose">Purpose</a></li>
+        <li class=""><a href="#quizmaker">Quiz Maker</a></li>
+        <li class=""><a href="#question">Question Design</a></li>
+        <li class=""><a href="#quiztaker">Quiz Taker/Preview Functionality</a></li>
+      </ul>
+    </div>
+    <!-- Content
+    ================================================== -->
+    <div class="span9"> <br/>
+      <section id="purpose" class="well">
+        <h1> Purpose</h1>
+        <br/>
+        <ul>
+          <li>Application is designed to facilitate the creation and administration of quizes for a classroom environment.</li>
+          <li>Offers easy to use drag and drop interface.</li>
+          <li>Options for different question types</li>
+          <li>On the fly preview functionality while designing a quiz.</li>
+        </ul>
+      </section>
+      <section id="quizmaker" class="well">
+        <h1>Quiz Maker</h1>
+        <br/>
+        <h4 style="color: #808080">Basic Layout</h4>
+        <br/>
+        <p> The existing wireframe with CSS includes the ability to add different types of questions to a quiz on
+          a per-question basis. Individual characteristics may be altered to an added question, depending
+          on the question type. The entire design process is conducted by dragging and dropping with the
+          mouse and entering the question/answer text with the keyboard. To add a question, the Maker simply
+          drags a question type from <b>left-hand menu</b>, and drops it into the highlighted area. The dropped
+          item will expand into the necessary fields to make a question of its type. In addition, the administrator
+          is also able to change any constrains of the quiz in the <b>jumboron subheader</b>. </p>
+        <br/>
+        <h4 style="color: #808080">Toolbar Design</h4>
+        <br/>
+        <ul>
+          <li>Design was provided by "Flatstrap"</li>
+          <li>Toolbar on the left stays fixed on the browser page when scrolling</li>
+          <li>Design allows user to see questions and options at all times</li>
+        </ul>
+        <br/>
+        <h4 style="color: #808080">Jumbotron subheader</h4>
+        <br/>
+        <ul>
+          <li>Located at the top screen, underneath the navigation bar</li>
+          <li>Quiz administrator can change constraints of the quiz</li>
+          <li>Provides quiz options with special features:
+            <ul>
+              <li>Load Saved Quiz
+                <ul>
+                  <li>Option to load a previously saved quiz</li>
+                </ul>
+              </li>
+              <li>Quiz Name</li>
+              <li>Time Limit
+                <ul>
+                  <li>Only allows integer input</li>
+                  <li>Does not allow text input</li>
+                  <li>Indicates non-valid input with red borders</li>
+                </ul>
+              </li>
+              <li>Possible Points
+                <ul>
+                  <li>Only allows integer input</li>
+                  <li>Does not allow text input</li>
+                  <li>Indicates non-valid input with red borders</li>
+                </ul>
+              </li>
+              <li>Option for Revealing Answers
+                <ul>
+                  <li>Indicates the amount of points possible for the entire quiz</li>
+                  <li>Drop-down box with options of <i>Never</i>, <i>After Deadline</i>, or <i>On Turn-in</i></li>
+                </ul>
+              </li>
+              <li>Option to Randomize Each Test
+                <ul>
+                  <li>Indicates whether or not to randomize questions</li>
+                  <li>Drop-down box with options of <i>Fixed Order</i> or <i>Randomized</i></li>
+                </ul>
+              </li>
+              <li>Quiz Open Date and Time
+                <ul>
+                  <li>Can manually type in date or select from drop-down calendar</li>
+                  <li>Can select <i>AM</i> or <i>PM</i>
+                </ul>
+              </li>
+              <li>Quiz End Date and Time
+                <ul>
+                  <li>Can manually type in date or select from drop-down calendar</li>
+                  <li>Can select <i>AM</i> or <i>PM</i>
+                </ul>
+              </li>
+            </ul>
+          <li>User can change attributes with arrow buttons and drop-down menus</li>
+        </ul>
+      </section>
+      <section id="question" class="well">
+        <h1>Question Design</h1>
+        <br/>
+        <h4 style="color: #808080">Main Features</h4>
+        <ul>
+          <li>Maker has the option of selecting different types of questions</li>
+          <li>Each new question added is slide into the top</li>
+          <li>Can drag and drop question labels on the sidebar to reorder</li>
+          <li>Option to reorder questions by type</li>
+          <li>Help buttons to give user a tour of the site</li>
+        </ul>
+        <br>
+        <h4 style="color: #808080">True/False</h4>
+        <ul>
+          <li>Enter question text and select correct answer (True or False)</li>
+          <li>Taker will see True or False options underneath the question and mark the answer</li>
+        </ul>
+        <br/>
+        <h4 style="color: #808080">Multiple Choice</h4>
+        <ul>
+          <li>Enter question</li>
+          <li>Dynamically add as many possible answers as desired with "Add Answer" button (Default: two answers)</li>
+          <li>Option of one correct answer or multiple correct answers</li>
+          <li>Taker will see question displayed and select answer using radio buttons</li>
+        </ul>
+        <br/>
+        <h4 style="color: #808080">Matching</h4>
+        <ul>
+          <li>Enter a list of word-pairs into a set of text input boxes</li>
+          <li>Taker will match words</li>
+        </ul>
+        <br>
+        <h4 style="color: #808080">Fill-in</h4>
+        <ul>
+          <li>Quiz maker enters text into the box with underscores where the blanks should be</li>
+          <li>Taker will enter the word(s) for the missing blank</li>
+        </ul>
+        <br/>
+        <h4 style="color: #808080">Short Answer</h4>
+        <ul>
+          <li>Maker will enter the question into the question box</li>
+          <li>Maker can optionally specify maximum number of characters</li>
+          <li>Taker will fill in the text area</li>
+        </ul>
+        <br/>
+        <h4 style="color: #808080">Inserting pictures/graphs into quiz</h4>
+        <ul>
+          <li>Optionally, each question type can have a picture associated with it that will be displayed to the Taker after the question text. </li>
+        </ul>
+      </section>
+      <section id="quiztaker" class="well">
+        <h1> Quiz Taker/Preview Functionality </h1>
+        <br/>
+        <p> Pretty straightforward for most question types. (There will be a preview button on the maker page). The
+          application will render a preview in a new window, based on the current state of the quizmaker page. </p>
+        <p> Backend will handle user management, scoring, and overall grading. Backend will also deal with saving
+          Maker’s quiz, and Taker’s answers. (For text based answers, Maker needs a way to manually grade the
+          answers and add score into calculated score) </p>
+        <br/>
+      </section>
+      <br/>
+      <br/>
+    </div>
+  </div>
+</div>
+<!-- Footer
+================================================== -->
+<footer class="footer">
+  <div class="container">
+
+    <p class="pull-right"><a href="#">Back to top</a></p>
+  </div>
+</footer>
+
+<!-- Le javascript
+================================================== --> 
+<!-- Placed at the end of document so the pages load faster --> 
+<script type="text/javascript" async src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> 
+<script src="assets/js/jquery.js"></script> 
+<script src="assets/js/google-code-prettify/prettify.js"></script> 
+<script src="assets/js/bootstrap-transition.js"></script> 
+<script src="assets/js/bootstrap-alert.js"></script> 
+<script src="assets/js/bootstrap-modal.js"></script> 
+<script src="assets/js/bootstrap-dropdown.js"></script> 
+<script src="assets/js/bootstrap-tab.js"></script> 
+<script src="assets/js/bootstrap-tooltip.js"></script> 
+<script src="assets/js/bootstrap-popover.js"></script> 
+<script src="assets/js/bootstrap-button.js"></script> 
+<script src="assets/js/bootstrap-collapse.js"></script> 
+<script src="assets/js/bootstrap-carousel.js"></script> 
+<script src="assets/js/bootstrap-typeahead.js"></script> 
+<script src="assets/js/bootstrap-affix.js"></script> 
+<script src="assets/js/application.js"></script>
+</body>
+</html>

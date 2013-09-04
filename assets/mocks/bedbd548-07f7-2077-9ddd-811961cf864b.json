@@ -1,0 +1,62 @@
+{
+	"id": "bedbd548-07f7-2077-9ddd-811961cf864b",
+	"questions": [
+		{
+			"id": "5",
+			"type": "tf",
+			"name": "Sky",
+			"questionText": "The sun is a star.",
+			"answer": true,
+			"points": "1"
+		},
+		{
+			"id": "4",
+			"type": "sa",
+			"name": "Hobby",
+			"questionText": "What is your hobby?",
+			"points": "1"
+		},
+		{
+			"id": "3",
+			"type": "sa",
+			"name": "Favorite Author",
+			"questionText": "Who is your favorite author?",
+			"points": "1"
+		},
+		{
+			"id": "2",
+			"type": "sa",
+			"name": "Name",
+			"questionText": "What is your name?",
+			"points": "1"
+		},
+		{
+			"id": "1",
+			"type": "mc",
+			"name": "Favorite Color",
+			"questionText": "What is your favorite color?",
+			"choose": "one",
+			"choices": [
+				"Red",
+				"Green",
+				"Blue",
+				"Yellow",
+				"Purple",
+				"Other"
+			],
+			"answer": [],
+			"points": "1"
+		}
+	],
+	"settings": {
+		"quizName": "Personal Quiz",
+		"timeLimit": "",
+		"possiblePoints": "5",
+		"viewAnswers": "1",
+		"startDate": "2013-08-01",
+		"startTime": "00:00",
+		"endDate": "2013-08-31",
+		"endTime": "23:59",
+		"randomizeTaker": "1"
+	}
+} 

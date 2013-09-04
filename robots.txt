@@ -1,0 +1,4 @@
+# robots.txt for http://s7.level3.pint.com
+
+User-agent: *
+Disallow: /	# To exclude all robots from the entire server

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Author Solely by Michael Yao -->
+    <!-- setup style and charset -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CSE135</title>
+    <!-- end of style and charset -->
+    
+    <!-- About this page -->
+    <meta name="description" content="Front Page">
+    <meta name="author" content="Michael Yao">
+    <!-- end of About this page -->
+
+    <!-- enable responsive features -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- end of responsive featuers -->
+
+    <!-- load style sheet -->
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/frontPage.css" rel="stylesheet">
+    <!-- load js at the end to increase speed -->
+    <script src="scripts/layout.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- end of loading js -->
+
+    <!-- customized script -->
+    <script>
+    window.onload = function()
+    {
+        /* corner case, jQuery failed */
+        if(!window.jQuery)
+        {
+            alert('jQuery not loaded');
+        }
+        else
+        {
+            /* call carousel js */
+            $(document).ready(function(){
+                $('.dropdown-toggle').dropdown();
+                $('#myCarousel').carousel();
+            });
+        }
+    }
+    </script>
+    <!-- end of customized script -->
+    <link rel="icon" 
+     type="image/png" 
+     href="images/favicon.png">
+	 
+	<style>
+	 .center1{
+	margin:auto;
+	width:15%;
+	}</style>
+</head>
+<body>
+    <!-- Video background -->
+    <video class="video_background" preload="auto" autoplay loop="loop" muted> 
+    <source src="videos/background.mp4" type="video/mp4">Video not supported </video>
+    <!-- end of video background -->
+
+    <!-- navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <div class="container">
+ 
+              <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </a>
+         
+              <!-- Title  -->
+              <a class="brand" href="index.html">CSE135</a>
+              <ul class="nav">
+
+                <!-- links other than title -->
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="phpPage/serverInfo.php">Server Info in PHP</a></li>
+				<li><a href="quizmaker.html">Quiz Maker</a></li>
+                <li><a href="template.html">
+<?php
+  session_start();
+  require '../connect.php';
+
+  $query      = $_SESSION['account_data'];
+  $result = mysql_query($query);
+  $row = mysql_fetch_array($result,MYSQL_NUM);
+  $type     = $_SESSION['account_type'];
+  
+  if( strcmp($type, 'slogin') == 0 )
+	$type = 'student';
+  else if( strcmp($type, 'plogin') == 0 )
+	$type = 'professor';
+  else if( strcmp($type, 'tlogin') == 0 )
+	$type = 'TA';
+print "Account: $row[1]"; 
+?>
+	      </a></li>
+                <li><a href="editInfo.html">EditInfo</a></li>
+                <li><a href="takeQuiz.html">TakeQuiz</a></li>
+		<li><a href="pcode/logout.php">Logout</a></li>
+             </ul>
+
+
+              <!-- search engine -->
+              <div class="nav-collapse collapse pull-right">
+                  <form class="navbar-search pull-left">
+                    <input type="text" class="search-query" placeholder="Search">
+                  </form>
+              </div>
+              <!-- end of search engine -->
+
+ 
+            </div>
+        </div>
+    </div>
+    <!-- end of navbar -->
+<!-- editable content -->
+<div class="well">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#home" data-toggle="tab">Profile</a></li>
+      <li><a href="#profile" data-toggle="tab">Password</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane active in" id="home">
+        <form id="tab" action="pcode/updateInfo.php" method="POST">
+	    <?php
+            	print "<label>Username: $row[1] </label>";
+            	print "<label>User Type: $type</label>";
+		print "<label>First Name</label>";
+		print "<input type='text' value='$row[4]' class='input-xlarge' name='editfname'>";
+		print "<label>Last Name</label>";
+		print "<input type='text' value='$row[5]' class='input-xlarge' name='editlname'>";
+		print "<label>Email</label>";
+		print "<input type='text' value='$row[3]' class='input-xlarge' name='editemail'>";
+            ?>
+          	<div>
+        	    <button class="btn btn-primary">Update</button>
+        	</div>
+        </form>
+      </div>
+      <div class="tab-pane fade" id="profile">
+    	<form id="tab2" action="pcode/updatePassword.php" method="POST">
+        	<label>New Password</label>
+        	<input type="password" class="input-xlarge" name="editpassword">
+        	<div>
+        	    <button class="btn btn-primary">Update</button>
+        	</div>
+    	</form>
+      </div>
+  </div>
+<!-- end of editable content -->
+
+</body>
+</html>

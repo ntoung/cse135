@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- setup style and charset -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CSE135</title>
+    <!-- end of style and charset -->
+    
+    <!-- About this page -->
+    <meta name="description" content="Front Page">
+    <meta name="author" content="Michael Yao">
+    <!-- end of About this page -->
+
+    <!-- enable responsive features -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- end of responsive featuers -->
+
+    <!-- load style sheet -->
+    <link href="../css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/frontPage.css" rel="stylesheet">
+    <!-- load js at the end to increase speed -->
+    <script src="../scripts/layout.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap-dropdown.js"></script>
+    <script src="../js/bootstrap-carousel.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- end of loading js -->
+
+
+
+</head>
+<body>
+    
+    <!-- Video background -->
+    <video class="video_background" preload="auto" autoplay loop="loop" muted> 
+    <source src="../videos/background.mp4" type="video/mp4">Video not supported </video>
+    <!-- end of video background -->
+
+    <!-- navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <div class="container">
+ 
+              <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </a>
+         
+              <!-- Title  -->
+              <a class="brand" href="#">CSE135</a>
+              <ul class="nav">
+
+                <!-- links other than title -->
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Dummy link</a></li>
+                <li><a href="#">Dummy link2</a></li>
+              </ul>
+
+
+              <!-- search engine -->
+              <div class="nav-collapse collapse pull-right">
+                  <form class="navbar-search pull-left">
+                    <input type="text" class="search-query" placeholder="Search">
+                  </form>
+              </div>
+              <!-- end of search engine -->
+
+              <!-- User info dropdown box -->
+              <ul class="nav pull-right">
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">INFO</a></li>
+                      <li><a href="#">INFO2</a></li>
+                      <li><a href="#">INFO3</a></li>
+                      <li class="divider"></li>
+                      <li class="nav-header">Personal Menu</li>
+                      <li><a href="#">Setting</a></li>
+                      <li><a href="#">Logout</a></li>
+                    </ul>
+                  </li>
+              </ul>
+              <!-- end of User info dropdown box -->
+ 
+            </div>
+        </div>
+    </div>
+    <!-- end of navbar -->
+
+    <!-- 404 Error Messages -->
+    <div class="jumbotron error_div_center">
+      <h1>404<br />Page Not Found!</h1>
+      <br/><br/>
+      <br/><br/>
+      <br/><br/>
+      <br/><br/>
+      <br/><br/>
+      <br/><br/>
+      <br/><br/>
+      <br/><br/>
+      <p><br/><a href="../index.html" class="btn btn-primary btn-lg">Home Page</a></p>
+    </div>
+    <!-- end of 404 Error Messages -->
+
+</body>
+</html>

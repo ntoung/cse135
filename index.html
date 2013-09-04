@@ -1,0 +1,344 @@
+<DOCTYPE html>
+<html>
+<head>
+
+    <!-- setup style and charset -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CSE135</title>
+    <!-- end of style and charset -->
+    
+    <!-- About this page -->
+    <meta name="description" content="Front Page">
+    <meta name="author" content="Michael Yao">
+    <!-- end of About this page -->
+
+    <!-- enable responsive features -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- end of responsive featuers -->
+
+    <!-- load style sheet -->
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/frontPage.css" rel="stylesheet">
+    <!-- load js at the end to increase speed -->
+    <script src="scripts/layout.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- end of loading js -->
+
+    <!-- customized script -->
+    <script>
+    window.onload = function()
+    {
+        /* corner case, jQuery failed */
+        if(!window.jQuery)
+        {
+            alert('jQuery not loaded');
+        }
+        else
+        {
+            /* call carousel js */
+            $(document).ready(function(){
+                $('.dropdown-toggle').dropdown();
+                $('#myCarousel').carousel();
+            });
+        }
+    }
+    </script>
+    <!-- end of customized script -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+    
+    <!-- Video background -->
+    <video class="video_background" preload="auto" autoplay loop="loop" muted> 
+    <source src="videos/background.mp4" type="video/mp4">Video not supported </video>
+    <!-- end of video background -->
+
+    <!-- navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <div class="container">
+ 
+              <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </a>
+         
+              <!-- Title  -->
+              <a class="brand" href="#">CSE135</a>
+              <ul class="nav">
+
+                <!-- links other than title -->
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="phpPage/serverInfo.php">Server Info in PHP</a></li>
+				<li><a href="quizmaker.html">Quiz Maker</a></li>
+                <li><a href="login.html">Login</a></li>
+              </ul>
+
+
+              <!-- search engine -->
+              <div class="nav-collapse collapse pull-right">
+                  <form class="navbar-search pull-left">
+                    <input type="text" class="search-query" placeholder="Search">
+                  </form>
+              </div>
+              <!-- end of search engine -->
+
+              <!-- User info dropdown box -->
+              <ul class="nav pull-right">
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">INFO</a></li>
+                      <li><a href="#">INFO2</a></li>
+                      <li><a href="#">INFO3</a></li>
+                      <li class="divider"></li>
+                      <li class="nav-header">Personal Menu</li>
+                      <li><a href="#">Setting</a></li>
+                      <li><a href="#">Logout</a></li>
+                    </ul>
+                  </li>
+              </ul>
+              <!-- end of User info dropdown box -->
+ 
+            </div>
+        </div>
+    </div>
+    <!-- end of navbar -->
+
+    <!-- carousel image -->
+    <div class="carousel3" style="width:800px; margin:0 auto;">
+        <div id="myCarousel" class="carousel slide">
+            <ol class="carousel-indicators">
+
+                <!-- setup number of data-slide -->
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <!-- end of number of slide -->
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+
+                    <!-- image one -->
+                    <img src="images/1.jpg" alt="">
+                    <div class="carousel-caption">
+                        <h4>Michael Yao</h4>
+                        <p>m1yao@ucsd.edu</p>
+                    </div>
+                    <!-- end of image one -->
+
+                </div>
+                <div class="item">
+
+                    <!-- image two -->
+                    <img src="images/2.jpg" alt="">
+                    <div class="carousel-caption">
+                        <h4>Nathan Toung</h4>
+                        <p>nmtoung@gmail.com</p>
+                    </div>
+                    <!-- end of image two -->
+
+                </div>
+                <div class="item">
+
+                    <!-- image three -->
+                    <img src="images/4.jpg" alt="">
+                    <div class="carousel-caption">
+                        <h4>Bryan Lin</h4>
+                        <p>b4lin@ucsd.edu</p>
+                    </div>
+                    <!-- end of image three -->
+
+                </div>
+            </div>
+
+            <!-- control buttons -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+            <!-- end of control buttons -->
+
+        </div>
+    </div>
+    <!-- end of carousel image -->
+
+<!-- marketing info -->
+ 
+<div id="tab" class="btn-group" data-toggle="buttons-radio">
+  <a href="#prices2" class="btn btn-large btn-info active" data-toggle="tab">Purpose</a>
+  <a href="#features2" class="btn btn-large btn-info" data-toggle="tab">Quiz Maker</a>
+  <a href="#requests2" class="btn btn-large btn-info" data-toggle="tab">Question Design</a>
+  <a href="#contact2" class="btn btn-large btn-info"  data-toggle="tab">Quiz Taker / Preview</a>
+</div>
+ 
+<div class="tab-content">
+  <div class="tab-pane active" id="prices2">
+    <br>
+    <div class="row">
+      	<br/>
+	<div class="span9">
+        <ul>
+          <li>Application is designed to facilitate the creation and administration of quizes for a classroom environment.</li>
+          <li>Offers easy to use drag and drop interface.</li>
+          <li>Options for different question types</li>
+          <li>On the fly preview functionality while designing a quiz.</li>
+        </ul>	
+	</div>
+    </div>
+  </div>
+  <div class="tab-pane" id="features2">
+  	<br>
+    <div class="row">
+      	<div class="span6">
+	</br>
+	<h4 style="color: #808080">Basic Layout</h4>
+        <br/>
+        <p> The existing wireframe with CSS includes the ability to add different types of questions to a quiz on
+          a per-question basis. Individual characteristics may be altered to an added question, depending
+          on the question type. The entire design process is conducted by dragging and dropping with the
+          mouse and entering the question/answer text with the keyboard. To add a question, the Maker simply
+          drags a question type from <b>left-hand menu</b>, and drops it into the highlighted area. The dropped
+          item will expand into the necessary fields to make a question of its type. In addition, the administrator
+          is also able to change any constrains of the quiz in the <b>jumboron subheader</b>. </p>
+        <br/>
+        <h4 style="color: #808080">Toolbar Design</h4>
+        <br/>
+        <ul>
+          <li>Design was provided by "Flatstrap"</li>
+          <li>Toolbar on the left stays fixed on the browser page when scrolling</li>
+          <li>Design allows user to see questions and options at all times</li>
+        </ul>
+        <br/>
+        <h4 style="color: #808080">Jumbotron subheader</h4>
+        <br/>
+        <ul>
+          <li>Located at the top screen, underneath the navigation bar</li>
+          <li>Quiz administrator can change constraints of the quiz</li>
+          <li>Provides quiz options with special features:
+            <ul>
+              <li>Load Saved Quiz
+                <ul>
+                  <li>Option to load a previously saved quiz</li>
+                </ul>
+              </li>
+              <li>Quiz Name</li>
+              <li>Time Limit
+                <ul>
+                  <li>Only allows integer input</li>
+                  <li>Does not allow text input</li>
+                  <li>Indicates non-valid input with red borders</li>
+                </ul>
+              </li>
+              <li>Possible Points
+                <ul>
+                  <li>Only allows integer input</li>
+                  <li>Does not allow text input</li>
+                  <li>Indicates non-valid input with red borders</li>
+                </ul>
+              </li>
+              <li>Option for Revealing Answers
+                <ul>
+                  <li>Indicates the amount of points possible for the entire quiz</li>
+                  <li>Drop-down box with options of <i>Never</i>, <i>After Deadline</i>, or <i>On Turn-in</i></li>
+                </ul>
+              </li>
+              <li>Option to Randomize Each Test
+                <ul>
+                  <li>Indicates whether or not to randomize questions</li>
+                  <li>Drop-down box with options of <i>Fixed Order</i> or <i>Randomized</i></li>
+                </ul>
+              </li>
+              <li>Quiz Open Date and Time
+                <ul>
+                  <li>Can manually type in date or select from drop-down calendar</li>
+                  <li>Can select <i>AM</i> or <i>PM</i>
+                </ul>
+              </li>
+              <li>Quiz End Date and Time
+                <ul>
+                  <li>Can manually type in date or select from drop-down calendar</li>
+                  <li>Can select <i>AM</i> or <i>PM</i>
+                </ul>
+              </li>
+            </ul>
+          <li>User can change attributes with arrow buttons and drop-down menus</li>
+        </ul>
+	</div>
+    </div>
+  </div>
+  <div class="tab-pane" id="requests2">
+  	<br>
+    	<br/>
+	<div class="row">
+      	<div class="span5">
+      	
+	<h1>Question Design</h1>
+        <br/>
+	</br>
+        <h4 style="color: #808080">Main Features</h4>
+        <ul>
+          <li>Maker has the option of selecting different types of questions</li>
+          <li>Each new question added is slide into the top</li>
+          <li>Can drag and drop question labels on the sidebar to reorder</li>
+          <li>Option to reorder questions by type</li>
+          <li>Help buttons to give user a tour of the site</li>
+        </ul>
+        <br>
+        <h4 style="color: #808080">True/False</h4>
+        <ul>
+          <li>Enter question text and select correct answer (True or False)</li>
+          <li>Taker will see True or False options underneath the question and mark the answer</li>
+        </ul>
+        <br/>
+        <h4 style="color: #808080">Multiple Choice</h4>
+        <ul>
+          <li>Enter question</li>
+          <li>Dynamically add as many possible answers as desired with "Add Answer" button (Default: two answers)</li>
+          <li>Option of one correct answer or multiple correct answers</li>
+          <li>Taker will see question displayed and select answer using radio buttons</li>
+        </ul>
+        <br/>
+        <h4 style="color: #808080">Matching</h4>
+        <ul>
+          <li>Enter a list of word-pairs into a set of text input boxes</li>
+          <li>Taker will match words</li>
+        </ul>
+        <br>
+        <h4 style="color: #808080">Fill-in</h4>
+        <ul>
+          <li>Quiz maker enters text into the box with underscores where the blanks should be</li>
+          <li>Taker will enter the word(s) for the missing blank</li>
+        </ul>
+        <br/>
+        <h4 style="color: #808080">Short Answer</h4>
+        <ul>
+          <li>Maker will enter the question into the question box</li>
+          <li>Maker can optionally specify maximum number of characters</li>
+          <li>Taker will fill in the text area</li>
+        </ul>
+        <br/>
+        <h4 style="color: #808080">Inserting pictures/graphs into quiz</h4>
+        <ul>
+          <li>Optionally, each question type can have a picture associated with it that will be displayed to the Taker after the question text. </li>
+        </ul>
+	</div>
+    </div>
+  </div>
+  <div class="tab-pane" id="contact2">
+  	<br>
+    </br>
+ <p> Backend will handle user management, scoring, and overall grading. Backend will also deal with saving
+          Maker’s quiz, and Taker’s answers. (For text based answers, Maker needs a way to manually grade the
+          answers and add score into calculated score) </p> 
+
+</div>
+</div>
+<!-- end of marketing info -->
+</body>
+</html>

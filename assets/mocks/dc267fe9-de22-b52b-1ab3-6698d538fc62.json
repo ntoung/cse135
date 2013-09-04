@@ -1,0 +1,45 @@
+{
+	"id": "dc267fe9-de22-b52b-1ab3-6698d538fc62",
+	"questions": [
+		{
+			"id": "2",
+			"type": "mc",
+			"name": "Peter Piper",
+			"questionText": "If Peter Piper picked a peck of pickled peppers, how many pickled peppers did Peter Piper pick?",
+			"choose": "one",
+			"choices": [
+				"100",
+				"1000",
+				"41",
+				"0"
+			],
+			"answer": [],
+			"points": "1"
+		},
+		{
+			"id": "1",
+			"type": "fi",
+			"name": "Woodchuck",
+			"questionText": "How much wood would a woodchuck chuck if a woodchuck could chuck wood?",
+			"answer": [
+				"0",
+				"none",
+				"A woodchuck would chuck as much wood as a woodchuck could chuck if a woodchuck could chuck wood.",
+				"42"
+			],
+			"points": "1"
+		}
+	],
+	"settings": {
+		"loadQuizSelect": "",
+		"quizName": "Brain Teasers",
+		"timeLimit": "90",
+		"possiblePoints": "2",
+		"viewAnswers": "3",
+		"startDate": "2013-08-01",
+		"startTime": "12:36:18",
+		"endDate": "2013-12-31",
+		"endTime": "23:59",
+		"randomizeTaker": "2"
+	}
+}
